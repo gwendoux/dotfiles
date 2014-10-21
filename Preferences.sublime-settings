@@ -1,7 +1,8 @@
 {
-    "auto_complete_delay": 500,
     "auto_complete_commit_on_tab": true,
+    "auto_complete_delay": 500,
     "bold_folder_labels": true,
+    "color_scheme": "Packages/JavaScriptNext - ES6 Syntax/Monokai Phoenix.tmTheme",
     "csslint_options":
     {
         "adjoining-classes": "warning",
@@ -36,15 +37,12 @@
         "vendor-prefix": true,
         "zero-units": "warning"
     },
-    "color_scheme": "Packages/JavaScriptNext - ES6 Syntax/Monokai Phoenix.tmTheme",
     "detect_indentation": false,
     "detect_slow_plugins": false,
     "draw_minimap_border": true,
     "draw_white_space": "all",
-    "ensure_newline_at_eof_on_save": true,
     "file_exclude_patterns":
     [
-        ".*",
         "*.pyc",
         "*.pyo",
         "*.exe",
@@ -84,7 +82,6 @@
     ],
     "save_on_focus_lost": true,
     "shift_tab_unindent": true,
-    "soda_retina_fix": true,
     "tab_size": 4,
     "theme": "Brogrammer.sublime-theme",
     "translate_tabs_to_spaces": true,
