@@ -30,7 +30,11 @@ alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
 
+# Flush Directory Service cache
+alias flush="dscacheutil -flushcache"
 
+# File size
+alias fs="stat -f \"%z bytes\""
 
 # #############################################################################
 # npm aliases
@@ -45,6 +49,7 @@ alias git-status='git status'
 alias git-commit='git commit'
 alias git-add='git add'
 alias git-push='git push'
+alias rm-stash='git stash clear'
 
 #############################################################################
 # bower aliases
@@ -93,7 +98,7 @@ alias mysql-restart="mysql-stop && mysql-start"
 # DISABLE_AUTO_UPDATE="true"
 
 # Change this value to set how frequently ZSH updates¬
-#export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=3
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -113,8 +118,9 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/sbin
+#export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/sbin
 
 [ -s "/Users/GDO/.nvm/nvm.sh" ] && . "/Users/GDO/.nvm/nvm.sh" # This loads nvm
 
