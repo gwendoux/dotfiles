@@ -1,0 +1,107 @@
+# Launch with brew bundle filename
+update
+upgrade
+
+# brew installs
+
+ack
+bash
+brew-cask
+coreutils
+faac
+ffmpeg
+findutils
+freetype
+gdbm
+gettext
+git
+glib
+graphicsmagick
+grep
+hub
+icu4c
+jpeg
+lame
+libffi
+libogg
+libpng
+libtool
+libvorbis
+libvpx
+maven
+mongodb
+mysql
+nginx
+node
+openssl
+osxfuse
+pcre
+php55
+pkg-config
+python
+readline
+rename
+speedtest_cli
+sqlite
+sshfs
+texi2html
+tree
+unixodbc
+webkit2png
+x264
+xvid
+xz
+yasm
+youtube-dl
+zlib
+zopfli
+
+# set up brew cask
+tap caskroom/cask
+install brew-cask
+
+# brew cask install
+
+adium
+alfred
+cord
+diskmaker-x
+firefox
+framer-studio
+geektool
+google-chrome
+imageoptim
+kaleidoscope
+libreoffice
+monolingual
+omnidisksweeper
+paparazzi
+rdio
+sequel-pro
+slack
+steam
+sublime-text
+superduper
+tower
+transmit
+virtualbox
+viscosity
+vlc
+vox
+
+# brew cask install quicklook plugins
+cask install qlmarkdown
+cask install betterzipql
+cask install ipaql
+cask install qlcolorcode
+cask install qlprettypatch
+cask install qlstephen
+cask install quicklook-csv
+cask install quicklook-json
+cask install suspicious-package
+cask install webp-quicklook
+
+# cleanup
+cask alfred link
+cleanup
+cask cleanup
