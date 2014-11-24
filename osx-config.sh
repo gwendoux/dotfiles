@@ -494,15 +494,6 @@ else
 
 
   ###############################################################################
-  # Mail
-  ###############################################################################
-
-  echo ""
-  echo "Setting email addresses to copy as 'foo@example.com' instead of 'Foo Bar <foo@example.com>' in Mail.app"
-  defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
-
-
-  ###############################################################################
   # Terminal
   ###############################################################################
 
@@ -567,41 +558,6 @@ else
     *) break;;
   esac
 
-
-  ###############################################################################
-  # Transmission.app                                                            #
-  ###############################################################################
-
-
-  echo ""
-  echo "Do you use Transmission for torrenting? (y/n)"
-  read -r response
-  case $response in
-    [yY])
-      echo ""
-      echo "Use `~/Downloads/Incomplete` to store incomplete downloads"
-      defaults write org.m0k.transmission UseIncompleteDownloadFolder -bool true
-      mkdir -p ~/Downloads/Incomplete
-      defaults write org.m0k.transmission IncompleteDownloadFolder -string "${HOME}/Downloads/Incomplete"
-
-      echo ""
-      echo "Don't prompt for confirmation before downloading"
-      defaults write org.m0k.transmission DownloadAsk -bool false
-
-      echo ""
-      echo "Trash original torrent files"
-      defaults write org.m0k.transmission DeleteOriginalTorrent -bool true
-
-      echo ""
-      echo "Hide the donate message"
-      defaults write org.m0k.transmission WarningDonate -bool false
-
-      echo ""
-      echo "Hide the legal disclaimer"
-      defaults write org.m0k.transmission WarningLegal -bool false
-      break;;
-    *) break;;
-  esac
 
 
   ###############################################################################
