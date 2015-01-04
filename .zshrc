@@ -24,6 +24,8 @@ alias zshconfig="subl ~/.zshrc"
 alias drives="df -h" # list all drives
 alias listen="sudo lsof -i -P | grep -i \"listen\"" # listen on ports
 
+alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+
 alias preview="open -a '$PREVIEW'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias safari="open -a safari"
