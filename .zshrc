@@ -77,6 +77,8 @@ alias nginx-start="sudo nginx"
 alias nginx-restart="sudo nginx -s reload"
 alias nginx-stop="sudo nginx -s stop"
 
+alias nginx-config-sites="subl /usr/local/etc/nginx/sites-enabled/"
+
 #############################################################################
 # php-fpm aliases
 #############################################################################
