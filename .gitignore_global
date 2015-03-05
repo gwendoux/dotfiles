@@ -1,3 +1,7 @@
+## to install globally
+## $ git config --global core.excludesfile ~/.gitignore_global
+###################
+
 # Compiled source #
 ###################
 *.com
