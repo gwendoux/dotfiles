@@ -14,7 +14,8 @@ export LANG="fr_FR"
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="bureau"
-ZSH_THEME="random"
+ZSH_THEME="re5et"
+#ZSH_THEME="random"
 
 
 #############################################################################
@@ -24,13 +25,21 @@ alias zshconfig="subl ~/.zshrc"
 alias drives="df -h" # list all drives
 alias listen="sudo lsof -i -P | grep -i \"listen\"" # listen on ports
 
-alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+alias cpwd="pwd | tr -d '\n' | pbcopy"
 
+alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
+
+# Mount Exalead with sshfs
+alias mountExalead="mkdir -p /Volumes/Exalead1 && sshfs exalead@exalead1.dev.cncc.fr: /Volumes/Exalead1"
+alias unmountExalead="diskutil unmount Exalead1"
+
+# Open with specifi app
 alias preview="open -a '$PREVIEW'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
 alias safari="open -a safari"
 alias firefox="open -a firefox"
 alias chrome="open -a google\ chrome"
+alias libreoffice="open -a /Users/GDO/Applications/LibreOffice.app"
 
 # Flush Directory Service cache
 alias flush="dscacheutil -flushcache"
@@ -38,13 +47,16 @@ alias flush="dscacheutil -flushcache"
 # File size
 alias fs="stat -f \"%z bytes\""
 
-## fix duplicated items in 'open with ...'
+# fix duplicated items in 'open with ...'
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+
+# update homebrew && brew cask
+alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
 
 #############################################################################
 # npm aliases
 #############################################################################
-alias npmui='npm-check-updates -u && sudo npm install'
+alias npmui='npm-check-updates -u && npm install'
 alias ctcmd='export HISTTIMEFORMAT="%d/%m/%y %T"; history | grep -c `date "+%d/%m/%y"`'
 
 #############################################################################
@@ -83,8 +95,8 @@ alias nginx-config-sites="subl /usr/local/etc/nginx/sites-enabled/"
 # php-fpm aliases
 #############################################################################
 
-alias php-start="sudo launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
-alias php-stop="sudo launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php55.plist"
+alias php-start="sudo launchctl load ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
+alias php-stop="sudo launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
 alias php-restart="php-stop && php-start"
 
 #############################################################################
@@ -121,9 +133,17 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.4/bin
+
 # Customize to your needs...
 # default path
 #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/sbin
+#
+#############################################################################
+# Grunt autocompletion
+#############################################################################
+
+#eval "$(grunt --completion=bash)"
 
 #############################################################################
 # Jump to folder
@@ -147,21 +167,30 @@ function _completemarks {
 compctl -K _completemarks jump
 compctl -K _completemarks unmark
 
+## output boot2docker ip without annoying messages
+docker-ip() {
+  boot2docker ip 2> /dev/null
+}
 
 #############################################################################
 # nvm config
 #############################################################################
 
-##[ -s "/Users/GDO/.nvm/nvm.sh" ] && . "/Users/GDO/.nvm/nvm.sh" # This loads nvm
+[ -s "/Users/GDO/.nvm/nvm.sh" ] && . "/Users/GDO/.nvm/nvm.sh" # This loads nvm
 
 ## automaticaly right use node version when .nvmrc is detected
-##nvmautouse() {
-##    if [ -r .nvmrc ]; then
-##        nvm use
-##    fi
-##}
-##
-##cd() {
-##    builtin cd "$@"
-##    nvmautouse
-##}
+nvmautouse() {
+    if [ -r .nvmrc ]; then
+        nvm use
+    fi
+}
+
+cd() {
+    builtin cd "$@"
+    nvmautouse
+}
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
