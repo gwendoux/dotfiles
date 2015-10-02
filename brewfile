@@ -1,109 +1,156 @@
+#! /usr/bin/env bash
+
+#Symlink into the normal place. Add this to login scripts as well
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # Launch with brew bundle filename
-update
-upgrade
+brew update
+brew upgrade
 
 # brew installs
 
-ack
-bash
-brew-cask
-coreutils
-faac
-ffmpeg
-findutils
-flow
-freetype
-gdbm
-gettext
-git
-glib
-graphicsmagick
-grep
-htop-osx
-hub
-icu4c
-jpeg
-lame
-libffi
-libogg
-libpng
-libtool
-libvorbis
-libvpx
-maven
-mongodb
-mysql
-nginx
-node
-openssl
-osxfuse
-pcre
-php55
-pkg-config
-python
-readline
-rename
-speedtest_cli
-sqlite
-sshfs
-texi2html
-tree
-unixodbc
-webkit2png
-x264
-xvid
-xz
-yasm
-youtube-dl
-zlib
-zopfli
+brew install ack
+brew install autoconf
+brew install automake
+brew install bash
+brew install bash-completion
+brew install boot2docker
+brew install casperjs
+brew install composer
+brew install coreutils
+brew install dirmngr
+brew install dnsmasq
+brew install docker
+brew install faac
+brew install ffmpeg
+brew install findutils
+brew install flow
+brew install freetype
+brew install gdbm
+brew install gettext
+brew install git
+brew install glib
+brew install gnupg2
+brew install gotty
+brew install gpg-agent
+brew install graphicsmagick
+brew install grep
+brew install htop-osx
+brew install httpie
+brew install hub
+brew install icu4c
+brew install imagemagick
+brew install jpeg
+brew install lame
+brew install libassuan
+brew install libffi
+brew install libgcrypt
+brew install libgpg-error
+brew install libksba
+brew install libogg
+brew install libpng
+brew install libtiff
+brew install libtool
+brew install libusb
+brew install libusb-compat
+brew install libvorbis
+brew install libvpx
+brew install libxml2
+brew install maven
+brew install mcrypt
+brew install mhash
+brew install mongodb
+brew install mysql
+brew install nginx
+brew install node
+brew install openssl
+brew install osxfuse
+brew install pcre
+brew install phantomjs
+brew install php56
+brew install pinentry
+brew install pkg-config
+brew install pth
+brew install python
+brew install readline
+brew install rename
+brew install rsync
+brew install sqlite
+brew install ssh-copy-id
+brew install sshfs
+brew install texi2html
+brew install thefuck
+brew install tree
+brew install unixodbc
+brew install webkit2png
+brew install x264
+brew install xvid
+brew install xz
+brew install yasm
+brew install youtube-dl
+brew install zlib
+brew install zopflibrew
 
 # set up brew cask
-tap caskroom/cask
-install brew-cask
+brew tap caskroom/cask
+brew install brew-cask
 
 # brew cask install
 
-adium
-alfred
-cord
-diskmaker-x
-firefox
-framer-studio
-geektool
-google-chrome
-imageoptim
-kaleidoscope
-libreoffice
-monolingual
-omnidisksweeper
-paparazzi
-rdio
-sequel-pro
-slack
-steam
-sublime-text
-superduper
-tower
-transmit
-virtualbox
-viscosity
-vlc
-vox
+brew cask install  adium
+brew cask install  alfred
+brew cask install  atom
+brew cask install  calibre
+brew cask install  cord
+brew cask install  diskmaker-x
+brew cask install  firefox
+brew cask install  framer-studio
+brew cask install  geektool
+brew cask install  gitup
+brew cask install  google-chrome
+brew cask install  google-drive
+brew cask install  imageoptim
+brew cask install  iterm2
+brew cask install  kaleidoscope
+brew cask install  libreoffice
+brew cask install  max
+brew cask install  monolingual
+brew cask install  numi
+brew cask install  omnidisksweeper
+brew cask install  onyx
+brew cask install  osxfuse
+brew cask install  paparazzi
+brew cask install  postgres
+brew cask install  qlmarkdown
+brew cask install  rdio
+brew cask install  skype
+brew cask install  slack
+brew cask install  sublime-text3
+brew cask install  superduper
+brew cask install  the-unarchiver
+brew cask install  totalfinder
+brew cask install  tower
+brew cask install  transmit
+brew cask install  unsplash-wallpaper
+brew cask install  vagrant
+brew cask install  virtualbox
+brew cask install  viscosity
+brew cask install  vlc
+brew cask install  vox
 
 # brew cask install quicklook plugins
-cask install qlmarkdown
-cask install betterzipql
-cask install ipaql
-cask install qlcolorcode
-cask install qlprettypatch
-cask install qlstephen
-cask install quicklook-csv
-cask install quicklook-json
-cask install suspicious-package
-cask install webp-quicklook
+brew cask install qlmarkdown
+brew cask install betterzipql
+brew cask install ipaql
+brew cask install epubquicklook
+brew cask install qlcolorcode
+brew cask install qlprettypatch
+brew cask install qlstephen
+brew cask install quicklook-csv
+brew cask install quicklook-json
+brew cask install suspicious-package
+brew cask install webp-quicklook
 
 # cleanup
-cask alfred link
-cleanup
-cask cleanup
+brew cleanup
+brew cask cleanup
