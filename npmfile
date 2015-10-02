@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# npm install -g > /usr/local/lib
+# install globally some package
+# install nvm first
+
+npm install -g clean-filename-cli
+npm install -g cordova
+npm install -g npm-check-update
+npm install -g caniuse
+npm install -g tldr
+npm install -g trash
