@@ -12,10 +12,8 @@ export LANG="fr_FR"
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="bureau"
-ZSH_THEME="re5et"
-#ZSH_THEME="random"
+#ZSH_THEME="bullet-train"
+ZSH_THEME="bureau"
 
 
 #############################################################################
@@ -49,6 +47,7 @@ alias fs="stat -f \"%z bytes\""
 
 # fix duplicated items in 'open with ...'
 alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;killall Finder;echo "Open With has been rebuilt, Finder will relaunch"'
+alias fixow-duplicate='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;echo "Open With has been rebuilt, Finder will relaunch"'
 
 # update homebrew && brew cask
 alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
@@ -56,7 +55,6 @@ alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew
 #############################################################################
 # npm aliases
 #############################################################################
-alias npmui='npm-check-updates -u && npm install'
 alias ctcmd='export HISTTIMEFORMAT="%d/%m/%y %T"; history | grep -c `date "+%d/%m/%y"`'
 
 #############################################################################
@@ -67,6 +65,8 @@ alias git-commit='git commit'
 alias git-add='git add'
 alias git-push='git push'
 alias rm-stash='git stash clear'
+alias git-allcommit='git log --oneline | nl -v0 |  sed "s/^ \+/&HEAD~/"'
+alias git-last10commit='git log -10 --oneline | nl -v0 |  sed "s/^ \+/&HEAD~/"'
 
 #############################################################################
 # grunt/gulp aliases
@@ -128,7 +128,7 @@ export HISTCONTROL=ignoredups
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git npm atom brew encode64 osx)
 
 source $ZSH/oh-my-zsh.sh
 
