@@ -50,7 +50,7 @@ alias fixow='/System/Library/Frameworks/CoreServices.framework/Versions/A/Framew
 alias fixow-duplicate='/System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user;echo "Open With has been rebuilt, Finder will relaunch"'
 
 # update homebrew && brew cask
-alias brew-update="brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+alias brew-update="brew update && brew cleanup && brew cask cleanup"
 
 #############################################################################
 # npm aliases
