@@ -110,11 +110,6 @@ else
     *) break;;
   esac
 
-
-  echo ""
-  echo "Increasing the window resize speed for Cocoa applications"
-  defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
-
   echo ""
   echo "Expanding the save panel by default"
   defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -139,10 +134,6 @@ else
       break;;
     *) break;;
   esac
-
-  echo ""
-  echo "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
-  sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
   echo ""
   echo "Check for software updates daily, not just once per week"
@@ -522,60 +513,6 @@ else
     case $response in
     [yY])
       hash tmutil &> /dev/null && sudo tmutil disablelocal
-      break;;
-    *) break;;
-  esac
-
-
-  ###############################################################################
-  # Messages                                                                    #
-  ###############################################################################
-
-  echo ""
-  echo "Disable automatic emoji substitution in Messages.app? (i.e. use plain text smileys) (y/n)"
-    case $response in
-    [yY])
-      defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-      break;;
-    *) break;;
-  esac
-
-  echo ""
-  echo "Disable smart quotes in Messages.app? (it's annoying for messages that contain code) (y/n)"
-    case $response in
-    [yY])
-      defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-      break;;
-    *) break;;
-  esac
-
-  echo ""
-  echo "Disable continuous spell checking in Messages.app? (y/n)"
-    case $response in
-    [yY])
-      defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
-      break;;
-    *) break;;
-  esac
-
-
-
-  ###############################################################################
-  # Sublime Text
-  ###############################################################################
-  echo ""
-  echo "Do you use Sublime Text 3 as your editor of choice, and is it installed?"
-  read -r response
-  case $response in
-    [yY])
-      # Installing from homebrew cask does the following for you!
-      # echo ""
-      # echo "Linking Sublime Text for command line usage as subl"
-      # ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
-
-      echo ""
-      echo "Setting Git to use Sublime Text as default editor"
-      git config --global core.editor "subl -n -w"
       break;;
     *) break;;
   esac
