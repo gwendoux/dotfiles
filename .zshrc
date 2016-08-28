@@ -25,12 +25,6 @@ alias listen="sudo lsof -i -P | grep -i \"listen\"" # listen on ports
 
 alias cpwd="pwd | tr -d '\n' | pbcopy"
 
-alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
-
-# Mount Exalead with sshfs
-alias mountExalead="mkdir -p /Volumes/Exalead1 && sshfs exalead@exalead1.dev.cncc.fr: /Volumes/Exalead1"
-alias unmountExalead="diskutil unmount Exalead1"
-
 # Open with specifi app
 alias preview="open -a '$PREVIEW'"
 alias xcode="open -a '/Developer/Applications/Xcode.app'"
