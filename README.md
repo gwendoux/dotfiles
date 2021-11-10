@@ -1,3 +1,7 @@
+
+
+[![DOI](https://sandbox.zenodo.org/badge/12778862.svg)](https://sandbox.zenodo.org/badge/latestdoi/12778862)
+
 dotfiles
 ========
 
